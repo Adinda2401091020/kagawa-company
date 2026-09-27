@@ -16,21 +16,45 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="kagawa.css">
+  <link rel="stylesheet" href="assets/style.css">
 
+  <script>
+    // Inline script to prevent theme flash
+    (function() {
+      const savedTheme = localStorage.getItem('kagawa-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 
 <body>
+<!-- Loader Curtain -->
+<div id="loader" class="loader-curtain">
+  <div class="loader-content">
+    <div class="loader-logo">K</div>
+    <div class="loader-text">KAGAWA</div>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+  </div>
+</div>
+
 <header class="site-header" id="top">
   <div class="container nav-wrap">
     <a class="brand" href="#top" aria-label="Kagawa">
       <span class="brand-mark">K</span>
       <span><strong>KAGAWA</strong><small>BENGKEL LAS</small></span>
     </a>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Ubah Tema">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
 
-    <button class="menu-toggle" aria-label="Buka menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+      <button class="menu-toggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
     <nav class="nav-menu">
       <a href="#home" class="active">Beranda</a>
@@ -49,21 +73,25 @@
 
 <main>
   <section class="hero" id="home">
+    <div class="ambient-glows">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+    </div>
     <div class="container hero-content">
-      <div class="eyebrow"><span></span> WELDING · FABRICATION · CUSTOM CONSTRUCTION</div>
-      <h1>Built with <em>precision.</em><br>Designed to last.</h1>
-      <p class="hero-text">
+      <div class="eyebrow reveal-item"><span></span> WELDING · FABRICATION · CUSTOM CONSTRUCTION</div>
+      <h1 class="reveal-item">Built with <em>precision.</em><br>Designed to last.</h1>
+      <p class="hero-text reveal-item">
         Kagawa melayani pekerjaan welding, fabrikasi besi, dan konstruksi custom
         untuk kebutuhan hunian, usaha, serta proyek — dengan perhatian pada
         detail, fungsi, dan hasil akhir.
       </p>
 
-      <div class="hero-actions">
+      <div class="hero-actions reveal-item">
         <a href="#contact" class="btn btn-primary">Konsultasi Proyek <span>↗</span></a>
         <a href="#projects" class="btn btn-ghost">Lihat Portfolio</a>
       </div>
 
-      <div class="hero-meta">
+      <div class="hero-meta reveal-item">
         <div><strong>01</strong><span>Custom<br>Solution</span></div>
         <div><strong>02</strong><span>Detail &<br>Precision</span></div>
         <div><strong>03</strong><span>Clear<br>Communication</span></div>
@@ -74,20 +102,20 @@
 
   <section class="trust-strip">
     <div class="container trust-grid">
-      <div class="trust-item"><strong>Custom-Oriented</strong><span>Spesifikasi mengikuti kebutuhan</span></div>
-      <div class="trust-item"><strong>Project-Based</strong><span>Ruang lingkup dibahas sejak awal</span></div>
-      <div class="trust-item"><strong>Clear Communication</strong><span>Informasi pekerjaan lebih terarah</span></div>
-      <div class="trust-item"><strong>Local Coverage</strong><span>Dharmasraya · Sumatera Barat</span></div>
+      <div class="trust-item reveal-on-scroll" style="--delay: 1"><strong>Custom-Oriented</strong><span>Spesifikasi mengikuti kebutuhan</span></div>
+      <div class="trust-item reveal-on-scroll" style="--delay: 2"><strong>Project-Based</strong><span>Ruang lingkup dibahas sejak awal</span></div>
+      <div class="trust-item reveal-on-scroll" style="--delay: 3"><strong>Clear Communication</strong><span>Informasi pekerjaan lebih terarah</span></div>
+      <div class="trust-item reveal-on-scroll" style="--delay: 4"><strong>Local Coverage</strong><span>Dharmasraya · Sumatera Barat</span></div>
     </div>
   </section>
 
   <section class="intro section">
     <div class="container intro-grid">
-      <div>
+      <div class="reveal-on-scroll">
         <p class="section-label">01 — COMPANY PROFILE</p>
         <h2>Solusi metalwork yang dimulai dari kebutuhan nyata.</h2>
       </div>
-      <div class="intro-copy">
+      <div class="intro-copy reveal-on-scroll" style="--delay: 2">
         <p>
           Setiap proyek memiliki ukuran, kondisi lapangan, fungsi, dan karakter
           yang berbeda. Kagawa membantu menerjemahkan kebutuhan tersebut menjadi
@@ -100,11 +128,11 @@
 
   <section class="about section dark" id="about">
     <div class="container about-grid">
-      <div class="about-image" role="img" aria-label="Visual workshop Kagawa">
+      <div class="about-image reveal-on-scroll" role="img" aria-label="Visual workshop Kagawa">
         <div class="image-tag">KAGAWA / WORKSHOP</div>
       </div>
 
-      <div class="about-content">
+      <div class="about-content reveal-on-scroll" style="--delay: 2">
         <p class="section-label">02 — TENTANG KAMI</p>
         <h2>Dibuat untuk bekerja. Dipikirkan untuk bertahan.</h2>
         <p>
@@ -125,7 +153,7 @@
 
   <section class="section dark" id="capabilities">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal-on-scroll">
         <div>
           <p class="section-label">03 — CAPABILITIES</p>
           <h2>Yang kami perhatikan di setiap pekerjaan.</h2>
@@ -137,24 +165,24 @@
       </div>
 
       <div class="capability-grid">
-        <article class="capability">
+        <article class="capability reveal-on-scroll" style="--delay: 1">
           <span class="capability-number">01</span>
           <h3>Detail & Measurement</h3>
           <p>Ukuran dan kebutuhan teknis dibahas agar pekerjaan memiliki acuan yang jelas sebelum pengerjaan.</p>
         </article>
-        <article class="capability">
+        <article class="capability reveal-on-scroll" style="--delay: 2">
           <span class="capability-number">02</span>
           <h3>Fabrication</h3>
           <p>Komponen dan konstruksi besi dapat dikerjakan sesuai desain serta kebutuhan penggunaan.</p>
         </article>
-        <article class="capability">
+        <article class="capability reveal-on-scroll" style="--delay: 3">
           <span class="capability-number">03</span>
           <h3>Finishing</h3>
           <p>Detail akhir menjadi bagian dari proses untuk menjaga tampilan dan kesesuaian dengan kebutuhan proyek.</p>
         </article>
       </div>
 
-      <div class="spec-box">
+      <div class="spec-box reveal-on-scroll">
         <div class="spec-box-head">
           <h3>Project Information</h3>
           <p>Informasi teknis final mengikuti hasil konsultasi, survey, desain, dan kebutuhan masing-masing pekerjaan.</p>
@@ -171,7 +199,7 @@
 
   <section class="services section light" id="services">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal-on-scroll">
         <div>
           <p class="section-label">04 — SERVICES</p>
           <h2>Layanan untuk kebutuhan residential, commercial, dan custom project.</h2>
@@ -183,7 +211,7 @@
       </div>
 
       <div class="service-grid">
-        <article class="service-card">
+        <article class="service-card reveal-on-scroll" style="--delay: 1">
           <span class="service-number">01</span>
           <div class="service-icon">▦</div>
           <h3>Pagar & Gerbang</h3>
@@ -191,7 +219,7 @@
           <a href="#contact">Konsultasikan ↗</a>
         </article>
 
-        <article class="service-card">
+        <article class="service-card reveal-on-scroll" style="--delay: 2">
           <span class="service-number">02</span>
           <div class="service-icon">⌂</div>
           <h3>Kanopi</h3>
@@ -199,7 +227,7 @@
           <a href="#contact">Konsultasikan ↗</a>
         </article>
 
-        <article class="service-card">
+        <article class="service-card reveal-on-scroll" style="--delay: 3">
           <span class="service-number">03</span>
           <div class="service-icon">╋</div>
           <h3>Railing & Tangga</h3>
@@ -207,7 +235,7 @@
           <a href="#contact">Konsultasikan ↗</a>
         </article>
 
-        <article class="service-card">
+        <article class="service-card reveal-on-scroll" style="--delay: 4">
           <span class="service-number">04</span>
           <div class="service-icon">□</div>
           <h3>Tralis & Pintu</h3>
@@ -215,7 +243,7 @@
           <a href="#contact">Konsultasikan ↗</a>
         </article>
 
-        <article class="service-card">
+        <article class="service-card reveal-on-scroll" style="--delay: 5">
           <span class="service-number">05</span>
           <div class="service-icon">⌘</div>
           <h3>Fabrikasi Besi</h3>
@@ -223,7 +251,7 @@
           <a href="#contact">Konsultasikan ↗</a>
         </article>
 
-        <article class="service-card service-featured">
+        <article class="service-card service-featured reveal-on-scroll" style="--delay: 6">
           <span class="service-number">06</span>
           <div class="service-icon">✦</div>
           <h3>Custom Welding</h3>
@@ -236,7 +264,7 @@
 
   <section class="section light" id="sectors">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal-on-scroll">
         <div>
           <p class="section-label">05 — SECTORS</p>
           <h2>Kebutuhan berbeda, pendekatan yang disesuaikan.</h2>
@@ -245,17 +273,17 @@
       </div>
 
       <div class="sector-grid">
-        <article class="sector-card">
+        <article class="sector-card reveal-on-scroll" style="--delay: 1">
           <span>01 · RESIDENTIAL</span>
           <h3>Hunian</h3>
           <p>Pagar, gerbang, kanopi, railing, tangga, tralis, pintu, dan kebutuhan metalwork untuk rumah.</p>
         </article>
-        <article class="sector-card">
+        <article class="sector-card reveal-on-scroll" style="--delay: 2">
           <span>02 · COMMERCIAL</span>
           <h3>Usaha & Komersial</h3>
           <p>Solusi fabrikasi dan konstruksi custom yang dapat disesuaikan dengan fungsi area usaha.</p>
         </article>
-        <article class="sector-card">
+        <article class="sector-card reveal-on-scroll" style="--delay: 3">
           <span>03 · PROJECT</span>
           <h3>Project-Based</h3>
           <p>Pekerjaan dengan scope tertentu yang membutuhkan pembahasan spesifikasi, ukuran, dan pelaksanaan.</p>
@@ -267,34 +295,34 @@
   <section class="why section dark">
     <div class="container">
       <div class="why-grid">
-        <div>
+        <div class="reveal-on-scroll">
           <p class="section-label">06 — WORKING PRINCIPLES</p>
           <h2>Profesional bukan hanya soal hasil akhir.</h2>
         </div>
 
         <div class="why-list">
-          <div class="why-item">
+          <div class="why-item reveal-on-scroll" style="--delay: 1">
             <span>01</span>
             <div>
               <h3>Requirement First</h3>
               <p>Kebutuhan, ukuran, desain, dan penggunaan dibahas sebelum pekerjaan berjalan.</p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item reveal-on-scroll" style="--delay: 2">
             <span>02</span>
             <div>
               <h3>Detail Oriented</h3>
               <p>Fungsi, proporsi, detail pengerjaan, dan tampilan akhir menjadi bagian dari perhatian pekerjaan.</p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item reveal-on-scroll" style="--delay: 3">
             <span>03</span>
             <div>
               <h3>Clear Communication</h3>
               <p>Spesifikasi dan estimasi dibicarakan agar ekspektasi pekerjaan lebih jelas sejak awal.</p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item reveal-on-scroll" style="--delay: 4">
             <span>04</span>
             <div>
               <h3>Project Adaptation</h3>
@@ -308,59 +336,68 @@
 
   <section class="projects section light" id="projects">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal-on-scroll">
         <div>
           <p class="section-label">07 — SELECTED WORKS</p>
           <h2>Portfolio yang berbicara lewat hasil nyata.</h2>
         </div>
         <p class="section-desc">
           Dokumentasi pekerjaan asli dapat ditambahkan untuk memperkuat company profile
-          dan menjadi referensi calon pelanggan.
+          dan menjadi referensi calon pelanggan. Klik card untuk melihat detail project.
         </p>
       </div>
 
       <div class="project-grid">
-        <article class="project project-large">
-          <div class="project-visual project-one"><span>PROJECT 01 · CUSTOM WELDING</span></div>
+        <article class="project project-large reveal-on-scroll" data-project-id="pagar-custom">
+          <div class="project-visual project-one">
+            <div class="project-bg-zoom"></div>
+            <span>PROJECT 01 · CUSTOM WELDING</span>
+          </div>
           <div class="project-info">
             <div><h3>Pagar Custom</h3><p>Residential / Custom Welding</p></div>
-            <span>↗</span>
+            <span class="project-arrow">↗</span>
           </div>
         </article>
 
-        <article class="project">
-          <div class="project-visual project-two"><span>PROJECT 02 · FABRICATION</span></div>
+        <article class="project reveal-on-scroll" data-project-id="kanopi" style="--delay: 1">
+          <div class="project-visual project-two">
+            <div class="project-bg-zoom"></div>
+            <span>PROJECT 02 · FABRICATION</span>
+          </div>
           <div class="project-info">
             <div><h3>Kanopi</h3><p>Residential / Fabrication</p></div>
-            <span>↗</span>
+            <span class="project-arrow">↗</span>
           </div>
         </article>
 
-        <article class="project">
-          <div class="project-visual project-three"><span>PROJECT 03 · METALWORK</span></div>
+        <article class="project reveal-on-scroll" data-project-id="railing" style="--delay: 2">
+          <div class="project-visual project-three">
+            <div class="project-bg-zoom"></div>
+            <span>PROJECT 03 · METALWORK</span>
+          </div>
           <div class="project-info">
             <div><h3>Railing</h3><p>Residential / Metalwork</p></div>
-            <span>↗</span>
+            <span class="project-arrow">↗</span>
           </div>
         </article>
       </div>
 
-      <div class="portfolio-note">
+      <div class="portfolio-note reveal-on-scroll">
         <span>CONTENT NOTE</span>
         <p>Placeholder visual di atas sebaiknya diganti dengan foto project asli, detail pekerjaan, lokasi, dan spesifikasi yang memang tersedia.</p>
       </div>
 
-      <div class="case-study">
+      <div class="case-study reveal-on-scroll" data-project-id="case-study">
         <div class="case-image"></div>
         <div class="case-content">
           <p class="section-label">PROJECT CASE STUDY</p>
           <h3>Dokumentasikan satu pekerjaan secara mendalam.</h3>
-          <p>Bagian ini sengaja disiapkan untuk menampilkan satu project unggulan dengan konteks, scope, proses, dan hasil yang dapat diverifikasi.</p>
+          <p>Bagian ini sengaja disiapkan untuk menampilkan satu project unggulan dengan konteks, scope, proses, dan hasil yang dapat diverifikasi. Klik untuk detail.</p>
           <div class="case-list">
             <div><span>Project Type</span><strong>Custom Fabrication</strong></div>
-            <div><span>Client / Location</span><strong>Tambahkan data asli</strong></div>
-            <div><span>Scope</span><strong>Tambahkan scope asli</strong></div>
-            <div><span>Completion</span><strong>Tambahkan periode asli</strong></div>
+            <div><span>Client / Location</span><strong>PT. Sinar Dharmasraya / Sungai Rumbai</strong></div>
+            <div><span>Scope</span><strong>Konstruksi Baja Gudang Utama</strong></div>
+            <div><span>Completion</span><strong>1 Bulan Pengerjaan</strong></div>
           </div>
         </div>
       </div>
@@ -369,7 +406,7 @@
 
   <section class="process section light" id="process">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal-on-scroll">
         <div>
           <p class="section-label">08 — PROJECT FLOW</p>
           <h2>Terstruktur dari konsultasi hingga pemasangan.</h2>
@@ -378,22 +415,22 @@
       </div>
 
       <div class="process-grid">
-        <div class="process-item">
+        <div class="process-item reveal-on-scroll" style="--delay: 1">
           <span>01</span>
           <h3>Konsultasi</h3>
           <p>Sampaikan kebutuhan, ukuran, desain, referensi, dan target penggunaan.</p>
         </div>
-        <div class="process-item">
+        <div class="process-item reveal-on-scroll" style="--delay: 2">
           <span>02</span>
           <h3>Survey & Ukur</h3>
           <p>Detail pekerjaan ditentukan berdasarkan kondisi dan kebutuhan di lapangan.</p>
         </div>
-        <div class="process-item">
+        <div class="process-item reveal-on-scroll" style="--delay: 3">
           <span>03</span>
           <h3>Penawaran</h3>
           <p>Spesifikasi dan estimasi pekerjaan dibahas sebelum proses dimulai.</p>
         </div>
-        <div class="process-item">
+        <div class="process-item reveal-on-scroll" style="--delay: 4">
           <span>04</span>
           <h3>Produksi & Instalasi</h3>
           <p>Pengerjaan, finishing, dan pemasangan dilakukan berdasarkan kesepakatan.</p>
@@ -404,31 +441,41 @@
 
   <section class="section dark" id="faq">
     <div class="container faq-grid">
-      <div>
+      <div class="reveal-on-scroll">
         <p class="section-label">09 — FAQ</p>
         <h2>Pertanyaan sebelum memulai proyek?</h2>
       </div>
 
-      <div class="faq-list">
+      <div class="faq-list reveal-on-scroll" style="--delay: 2">
         <details open>
           <summary>Apakah Kagawa menerima desain custom?</summary>
-          <p>Ya. Kebutuhan ukuran, desain, referensi, dan detail pekerjaan dapat didiskusikan terlebih dahulu untuk menentukan ruang lingkup pekerjaan.</p>
+          <div class="details-content">
+            <p>Ya. Kebutuhan ukuran, desain, referensi, dan detail pekerjaan dapat didiskusikan terlebih dahulu untuk menentukan ruang lingkup pekerjaan.</p>
+          </div>
         </details>
         <details>
           <summary>Apakah bisa konsultasi sebelum menentukan pekerjaan?</summary>
-          <p>Bisa. Konsultasi awal digunakan untuk memahami kebutuhan, kondisi pekerjaan, dan spesifikasi yang diperlukan sebelum penawaran.</p>
+          <div class="details-content">
+            <p>Bisa. Konsultasi awal digunakan untuk memahami kebutuhan, kondisi pekerjaan, dan spesifikasi yang diperlukan sebelum penawaran.</p>
+          </div>
         </details>
         <details>
           <summary>Apakah tersedia survey dan pengukuran?</summary>
-          <p>Survey dan pengukuran dapat dilakukan sesuai kebutuhan pekerjaan dan kondisi proyek.</p>
+          <div class="details-content">
+            <p>Survey dan pengukuran dapat dilakukan sesuai kebutuhan pekerjaan dan kondisi proyek.</p>
+          </div>
         </details>
         <details>
           <summary>Bagaimana cara mendapatkan estimasi harga?</summary>
-          <p>Kirimkan kebutuhan, ukuran, lokasi, serta referensi desain jika tersedia. Detail pekerjaan kemudian dapat dibahas untuk penyusunan estimasi.</p>
+          <div class="details-content">
+            <p>Kirimkan kebutuhan, ukuran, lokasi, serta referensi desain jika tersedia. Detail pekerjaan kemudian dapat dibahas untuk penyusunan estimasi.</p>
+          </div>
         </details>
         <details>
           <summary>Apakah melayani proyek untuk usaha atau kebutuhan komersial?</summary>
-          <p>Kagawa melayani kebutuhan rumah, usaha, dan pekerjaan proyek. Lingkup pekerjaan dapat dibahas berdasarkan kebutuhan masing-masing proyek.</p>
+          <div class="details-content">
+            <p>Kagawa melayani kebutuhan rumah, usaha, dan pekerjaan proyek. Lingkup pekerjaan dapat dibahas berdasarkan kebutuhan masing-masing proyek.</p>
+          </div>
         </details>
       </div>
     </div>
@@ -436,7 +483,7 @@
 
   <section class="quote-section section" id="request">
     <div class="container quote-grid">
-      <div class="quote-copy">
+      <div class="quote-copy reveal-on-scroll">
         <p class="section-label">09 — PROJECT INQUIRY</p>
         <h2>Berikan detail proyek. Kami mulai dari kebutuhan Anda.</h2>
         <p>Form ini dapat menjadi titik awal untuk calon client. Data yang masuk membantu tim memahami kebutuhan sebelum komunikasi lanjutan.</p>
@@ -448,7 +495,7 @@
         </div>
       </div>
 
-      <form class="quote-form" id="projectForm">
+      <form class="quote-form reveal-on-scroll" id="projectForm" style="--delay: 2">
         <div class="form-grid">
           <div class="field">
             <label for="name">Nama</label>
@@ -478,13 +525,16 @@
             <textarea id="message" name="message" placeholder="Jelaskan ukuran, lokasi, desain, kebutuhan, atau hal penting lainnya..." required></textarea>
           </div>
         </div>
-        <button class="btn btn-primary" type="submit">Kirim Detail via WhatsApp ↗</button>
+        <button class="btn btn-primary" type="submit">
+          <span class="btn-text">Kirim Detail via WhatsApp</span>
+          <span class="btn-icon">↗</span>
+        </button>
       </form>
     </div>
   </section>
 
   <section class="cta" id="contact">
-    <div class="container cta-box">
+    <div class="container cta-box reveal-on-scroll">
       <p class="section-label">10 — CONTACT</p>
       <h2>Punya proyek yang ingin <em>dibangun?</em></h2>
       <p>
@@ -527,10 +577,191 @@
   </div>
 </footer>
 
-<a class="floating-wa" href="https://wa.me/6281363342574" target="_blank" rel="noopener" aria-label="WhatsApp"
-   style="position:fixed;right:20px;bottom:20px;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#25D366;color:#fff;font-weight:800;font-size:10px;z-index:90;box-shadow:0 12px 30px rgba(0,0,0,.25)">WA</a>
+<!-- Interactive Elements -->
 
-<script src="kagawa.js" defer></script>
+<!-- Floating WA button -->
+<a class="floating-wa" href="https://wa.me/6281363342574" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wa-glow"></div>
+  <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.288 1.981 13.805 1.011 11.996 1.01c-5.44 0-9.866 4.372-9.87 9.802 0 1.714.47 3.387 1.357 4.847l-.993 3.629 3.733-.968zm11.587-4.412c-.29-.143-1.71-.832-1.975-.929-.266-.096-.459-.143-.653.144-.193.286-.748.929-.917 1.12-.17.19-.338.213-.627.072-.29-.143-1.223-.444-2.33-1.417-.862-.757-1.443-1.693-1.611-1.98-.17-.286-.018-.442.126-.583.13-.127.29-.335.435-.503.144-.167.193-.286.29-.478.096-.191.048-.359-.024-.503-.072-.143-.653-1.554-.894-2.13-.236-.56-.475-.483-.653-.492-.17-.008-.362-.01-.555-.01s-.507.072-.773.359c-.266.286-1.013.976-1.013 2.38 0 1.403 1.039 2.76 1.183 2.951.145.19 2.045 3.076 4.954 4.305.692.291 1.233.466 1.655.597.695.218 1.328.187 1.826.114.557-.082 1.71-.689 1.952-1.355.242-.665.242-1.236.17-1.355-.072-.12-.266-.214-.556-.357z"/>
+  </svg>
+</a>
+
+<!-- Back-to-Top Indicator with circular scroll progress -->
+<button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+  <svg class="progress-ring" width="48" height="48">
+    <circle class="progress-ring__circle" stroke="var(--accent)" stroke-width="2.5" fill="transparent" r="20" cx="24" cy="24"/>
+  </svg>
+  <span class="arrow">↑</span>
+</button>
+
+<!-- Desktop Custom Cursor -->
+<div class="cursor-dot" data-cursor></div>
+<div class="cursor-ring" data-cursor></div>
+
+<!-- Interactive Project Details Modal -->
+<div id="projectModal" class="modal" aria-hidden="true" role="dialog">
+  <div class="modal-overlay"></div>
+  <div class="modal-container">
+    <button class="modal-close" id="modalClose" aria-label="Tutup Detail">&times;</button>
+    <div class="modal-content">
+      <div class="modal-grid">
+        <div class="modal-visual-panel">
+          <div class="modal-image-placeholder"></div>
+        </div>
+        <div class="modal-details-panel">
+          <p class="section-label" id="modalCategory">RESIDENTIAL / CUSTOM WELDING</p>
+          <h2 id="modalTitle">Pagar Custom Minimalis</h2>
+
+          <div class="modal-desc-box">
+            <p id="modalDescription">Pembuatan pagar rumah bergaya modern minimalis menggunakan kombinasi besi galvanis anti-karat dan bilah WPC motif kayu jati.</p>
+          </div>
+
+          <div class="modal-specs-group">
+            <h3>Spesifikasi Teknis</h3>
+            <div class="modal-specs-grid" id="modalSpecs">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <div class="modal-meta-grid">
+            <div>
+              <small>CLIENT</small>
+              <strong id="modalClient">Bpk. Hermawan</strong>
+            </div>
+            <div>
+              <small>LOKASI</small>
+              <strong id="modalLocation">Dharmasraya</strong>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <a href="#contact" class="btn btn-primary" id="modalCta">
+              Konsultasi Project Serupa <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="assets/main.js" defer></script>
+
+</body>
+</html>
+
+      <p class="section-label">10 — CONTACT</p>
+      <h2>Punya proyek yang ingin <em>dibangun?</em></h2>
+      <p>
+        Ceritakan kebutuhan Anda kepada Kagawa. Sertakan ukuran, lokasi, desain,
+        referensi, atau foto area bila tersedia agar konsultasi dapat dimulai dengan lebih jelas.
+      </p>
+
+      <a class="btn btn-primary"
+         href="https://wa.me/6281363342574?text=Halo%20Kagawa%2C%20saya%20ingin%20konsultasi%20mengenai%20pekerjaan%20las%20atau%20fabrikasi."
+         target="_blank" rel="noopener">
+        Chat via WhatsApp <span>↗</span>
+      </a>
+
+      <div class="contact-details">
+        <div><small>LOCATION</small><strong>Dharmasraya, Sumatera Barat</strong></div>
+        <div><small>WHATSAPP</small><strong>+62 813-6334-2574</strong></div>
+        <div><small>OPERATING DAYS</small><strong>Senin — Sabtu</strong></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-main">
+    <div class="brand footer-brand">
+      <span class="brand-mark">K</span>
+      <span><strong>KAGAWA</strong><small>BENGKEL LAS</small></span>
+    </div>
+    <p>Welding · Fabrication · Custom Construction</p>
+    <div class="footer-links">
+      <a href="#about">Tentang</a>
+      <a href="#services">Layanan</a>
+      <a href="#projects">Portfolio</a>
+      <a href="#contact">Kontak</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Kagawa. All rights reserved.</span>
+    <span>Website by Dinda</span>
+  </div>
+</footer>
+
+<!-- Interactive Elements -->
+
+<!-- Floating WA button -->
+<a class="floating-wa" href="https://wa.me/6281363342574" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wa-glow"></div>
+  <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.288 1.981 13.805 1.011 11.996 1.01c-5.44 0-9.866 4.372-9.87 9.802 0 1.714.47 3.387 1.357 4.847l-.993 3.629 3.733-.968zm11.587-4.412c-.29-.143-1.71-.832-1.975-.929-.266-.096-.459-.143-.653.144-.193.286-.748.929-.917 1.12-.17.19-.338.213-.627.072-.29-.143-1.223-.444-2.33-1.417-.862-.757-1.443-1.693-1.611-1.98-.17-.286-.018-.442.126-.583.13-.127.29-.335.435-.503.144-.167.193-.286.29-.478.096-.191.048-.359-.024-.503-.072-.143-.653-1.554-.894-2.13-.236-.56-.475-.483-.653-.492-.17-.008-.362-.01-.555-.01s-.507.072-.773.359c-.266.286-1.013.976-1.013 2.38 0 1.403 1.039 2.76 1.183 2.951.145.19 2.045 3.076 4.954 4.305.692.291 1.233.466 1.655.597.695.218 1.328.187 1.826.114.557-.082 1.71-.689 1.952-1.355.242-.665.242-1.236.17-1.355-.072-.12-.266-.214-.556-.357z"/>
+  </svg>
+</a>
+
+<!-- Back-to-Top Indicator with circular scroll progress -->
+<button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+  <svg class="progress-ring" width="48" height="48">
+    <circle class="progress-ring__circle" stroke="var(--accent)" stroke-width="2.5" fill="transparent" r="20" cx="24" cy="24"/>
+  </svg>
+  <span class="arrow">↑</span>
+</button>
+
+<!-- Desktop Custom Cursor -->
+<div class="cursor-dot" data-cursor></div>
+<div class="cursor-ring" data-cursor></div>
+
+<!-- Interactive Project Details Modal -->
+<div id="projectModal" class="modal" aria-hidden="true" role="dialog">
+  <div class="modal-overlay"></div>
+  <div class="modal-container">
+    <button class="modal-close" id="modalClose" aria-label="Tutup Detail">&times;</button>
+    <div class="modal-content">
+      <div class="modal-grid">
+        <div class="modal-visual-panel">
+          <div class="modal-image-placeholder"></div>
+        </div>
+        <div class="modal-details-panel">
+          <p class="section-label" id="modalCategory">RESIDENTIAL / CUSTOM WELDING</p>
+          <h2 id="modalTitle">Pagar Custom Minimalis</h2>
+          
+          <div class="modal-desc-box">
+            <p id="modalDescription">Pembuatan pagar rumah bergaya modern minimalis menggunakan kombinasi besi galvanis anti-karat dan bilah WPC motif kayu jati.</p>
+          </div>
+
+          <div class="modal-specs-group">
+            <h3>Spesifikasi Teknis</h3>
+            <div class="modal-specs-grid" id="modalSpecs">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <div class="modal-meta-grid">
+            <div>
+              <small>CLIENT</small>
+              <strong id="modalClient">Bpk. Hermawan</strong>
+            </div>
+            <div>
+              <small>LOKASI</small>
+              <strong id="modalLocation">Dharmasraya</strong>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <a href="#contact" class="btn btn-primary" id="modalCta">
+              Konsultasi Project Serupa <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/main.js" defer></script>
 
 </body>
 </html>
