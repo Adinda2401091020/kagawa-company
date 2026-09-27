@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       progressCircle.style.strokeDashoffset = offset;
       
-      // Visibility toggler
+      
       if (scrollTop > 400) {
         backToTopBtn.classList.add('visible');
       } else {
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Project Modal Controller & Structured Project Data ---
+  
   const projectsData = {
     'pagar-custom': {
       title: "Pagar Custom Minimalis",
