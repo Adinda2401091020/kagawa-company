@@ -260,6 +260,85 @@
     .contact-details small{display:block;color:#717a80;font-size:8px;letter-spacing:.16em;margin-bottom:7px}
     .contact-details strong{font-size:12px;font-weight:600;color:#e2e5e7}
 
+
+    /* V2 BUSINESS SECTIONS */
+    .trust-strip{background:#0f1214;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .trust-item{padding:28px 20px;border-right:1px solid var(--line)}
+    .trust-item:last-child{border-right:0}
+    .trust-item strong{display:block;color:#f0f2f3;font-family:"Manrope";font-size:15px}
+    .trust-item span{display:block;color:#737c82;font-size:10px;margin-top:5px;text-transform:uppercase;letter-spacing:.1em}
+
+    .sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .sector-card{padding:34px;background:#fff;border:1px solid #dde0dd;min-height:235px;position:relative}
+    .sector-card span{font-size:10px;color:#a8751d;font-weight:700}
+    .sector-card h3{font-family:"Manrope";font-size:23px;margin:38px 0 10px}
+    .sector-card p{font-size:13px;color:#687177;max-width:340px}
+
+    .spec-box{margin-top:55px;padding:35px;background:#15191c;border:1px solid var(--line)}
+    .spec-box-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:25px}
+    .spec-box-head h3{font-family:"Manrope";font-size:23px}
+    .spec-box-head p{color:#7e878d;font-size:12px;max-width:430px}
+    .spec-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+    .spec-item{padding:20px 15px;border-right:1px solid var(--line)}
+    .spec-item:last-child{border-right:0}
+    .spec-item small{display:block;color:#697278;font-size:8px;letter-spacing:.14em;text-transform:uppercase}
+    .spec-item strong{display:block;margin-top:8px;font-size:13px;color:#e1e5e7}
+
+    .case-study{margin-top:25px;display:grid;grid-template-columns:1fr 1fr;border:1px solid #d6dad7;background:#fff}
+    .case-image{min-height:360px;background:
+      linear-gradient(135deg,rgba(217,164,65,.18),transparent 40%),
+      repeating-linear-gradient(125deg,#4a4e50 0 22px,#292d2f 22px 44px);
+      position:relative}
+    .case-image:after{content:"CASE STUDY";position:absolute;left:24px;bottom:20px;color:#fff;font-size:9px;letter-spacing:.2em}
+    .case-content{padding:42px}
+    .case-content .section-label{font-size:9px}
+    .case-content h3{font-family:"Manrope";font-size:29px;line-height:1.1;margin:13px 0}
+    .case-content>p{color:#687177;font-size:13px}
+    .case-list{margin-top:25px;border-top:1px solid #d8dcd9}
+    .case-list div{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid #d8dcd9;font-size:11px}
+    .case-list span{color:#858d92}.case-list strong{text-align:right}
+
+    .quote-section{background:#f0f2ef;color:var(--ink)}
+    .quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+    .quote-copy h2{max-width:530px}
+    .quote-copy p{color:#687177;font-size:14px;margin-top:20px;max-width:470px}
+    .quote-checklist{margin-top:28px;display:grid;gap:11px}
+    .quote-checklist div{font-size:12px;color:#50585d}
+    .quote-checklist span{color:#a8751d;font-weight:800;margin-right:9px}
+    .quote-form{background:#fff;border:1px solid #d9ddda;padding:32px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#727a7f}
+    .field input,.field textarea,.field select{
+      width:100%;border:1px solid #d6dad8;background:#fafbfa;padding:13px 14px;
+      font:inherit;font-size:13px;color:#202426;outline:none
+    }
+    .field textarea{min-height:120px;resize:vertical}
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:#a8751d}
+    .quote-form .btn{margin-top:18px;border:0;cursor:pointer}
+
+    @media(max-width:900px){
+      .trust-grid{grid-template-columns:1fr 1fr}
+      .trust-item:nth-child(2){border-right:0}
+      .trust-item:nth-child(n+3){border-top:1px solid var(--line)}
+      .sector-grid{grid-template-columns:1fr 1fr}
+      .spec-grid{grid-template-columns:1fr 1fr}
+      .case-study{grid-template-columns:1fr}
+      .quote-grid{grid-template-columns:1fr;gap:45px}
+    }
+    @media(max-width:620px){
+      .trust-grid,.sector-grid,.spec-grid,.form-grid{grid-template-columns:1fr}
+      .trust-item{border-right:0!important;border-top:1px solid var(--line)}
+      .trust-item:first-child{border-top:0}
+      .spec-item{border-right:0;border-top:1px solid var(--line)}
+      .spec-item:first-child{border-top:0}
+      .field.full{grid-column:auto}
+      .case-content{padding:28px 22px}
+      .quote-form{padding:22px 18px}
+    }
+
     /* FOOTER */
     .footer{background:#080a0b;border-top:1px solid var(--line)}
     .footer-main{padding:48px 0;display:grid;grid-template-columns:1fr 1fr auto;gap:30px;align-items:center}
@@ -330,8 +409,10 @@
       <a href="#capabilities">Kapabilitas</a>
       <a href="#services">Layanan</a>
       <a href="#projects">Portfolio</a>
+      <a href="#sectors">Sektor</a>
       <a href="#process">Proses</a>
       <a href="#faq">FAQ</a>
+      <a href="#request">Request</a>
       <a href="#contact" class="nav-cta">Hubungi Kami</a>
     </nav>
   </div>
@@ -360,6 +441,15 @@
       </div>
     </div>
     <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item"><strong>Custom-Oriented</strong><span>Spesifikasi mengikuti kebutuhan</span></div>
+      <div class="trust-item"><strong>Project-Based</strong><span>Ruang lingkup dibahas sejak awal</span></div>
+      <div class="trust-item"><strong>Clear Communication</strong><span>Informasi pekerjaan lebih terarah</span></div>
+      <div class="trust-item"><strong>Local Coverage</strong><span>Dharmasraya · Sumatera Barat</span></div>
+    </div>
   </section>
 
   <section class="intro section">
@@ -434,6 +524,19 @@
           <p>Detail akhir menjadi bagian dari proses untuk menjaga tampilan dan kesesuaian dengan kebutuhan proyek.</p>
         </article>
       </div>
+
+      <div class="spec-box">
+        <div class="spec-box-head">
+          <h3>Project Information</h3>
+          <p>Informasi teknis final mengikuti hasil konsultasi, survey, desain, dan kebutuhan masing-masing pekerjaan.</p>
+        </div>
+        <div class="spec-grid">
+          <div class="spec-item"><small>Scope</small><strong>Welding & Fabrication</strong></div>
+          <div class="spec-item"><small>Application</small><strong>Residential / Commercial</strong></div>
+          <div class="spec-item"><small>Design</small><strong>Custom / Reference-Based</strong></div>
+          <div class="spec-item"><small>Execution</small><strong>Production & Installation</strong></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -502,11 +605,41 @@
     </div>
   </section>
 
+  <section class="section light" id="sectors">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">05 — SECTORS</p>
+          <h2>Kebutuhan berbeda, pendekatan yang disesuaikan.</h2>
+        </div>
+        <p class="section-desc">Kagawa dapat mendiskusikan kebutuhan pekerjaan berdasarkan konteks penggunaan dan karakter proyek.</p>
+      </div>
+
+      <div class="sector-grid">
+        <article class="sector-card">
+          <span>01 · RESIDENTIAL</span>
+          <h3>Hunian</h3>
+          <p>Pagar, gerbang, kanopi, railing, tangga, tralis, pintu, dan kebutuhan metalwork untuk rumah.</p>
+        </article>
+        <article class="sector-card">
+          <span>02 · COMMERCIAL</span>
+          <h3>Usaha & Komersial</h3>
+          <p>Solusi fabrikasi dan konstruksi custom yang dapat disesuaikan dengan fungsi area usaha.</p>
+        </article>
+        <article class="sector-card">
+          <span>03 · PROJECT</span>
+          <h3>Project-Based</h3>
+          <p>Pekerjaan dengan scope tertentu yang membutuhkan pembahasan spesifikasi, ukuran, dan pelaksanaan.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="why section dark">
     <div class="container">
       <div class="why-grid">
         <div>
-          <p class="section-label">05 — WORKING PRINCIPLES</p>
+          <p class="section-label">06 — WORKING PRINCIPLES</p>
           <h2>Profesional bukan hanya soal hasil akhir.</h2>
         </div>
 
@@ -548,7 +681,7 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="section-label">06 — SELECTED WORKS</p>
+          <p class="section-label">07 — SELECTED WORKS</p>
           <h2>Portfolio yang berbicara lewat hasil nyata.</h2>
         </div>
         <p class="section-desc">
@@ -587,6 +720,21 @@
         <span>CONTENT NOTE</span>
         <p>Placeholder visual di atas sebaiknya diganti dengan foto project asli, detail pekerjaan, lokasi, dan spesifikasi yang memang tersedia.</p>
       </div>
+
+      <div class="case-study">
+        <div class="case-image"></div>
+        <div class="case-content">
+          <p class="section-label">PROJECT CASE STUDY</p>
+          <h3>Dokumentasikan satu pekerjaan secara mendalam.</h3>
+          <p>Bagian ini sengaja disiapkan untuk menampilkan satu project unggulan dengan konteks, scope, proses, dan hasil yang dapat diverifikasi.</p>
+          <div class="case-list">
+            <div><span>Project Type</span><strong>Custom Fabrication</strong></div>
+            <div><span>Client / Location</span><strong>Tambahkan data asli</strong></div>
+            <div><span>Scope</span><strong>Tambahkan scope asli</strong></div>
+            <div><span>Completion</span><strong>Tambahkan periode asli</strong></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -594,7 +742,7 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="section-label">07 — PROJECT FLOW</p>
+          <p class="section-label">08 — PROJECT FLOW</p>
           <h2>Terstruktur dari konsultasi hingga pemasangan.</h2>
         </div>
         <p class="section-desc">Alur dibuat sederhana agar calon pelanggan memahami bagaimana pekerjaan diproses.</p>
@@ -628,7 +776,7 @@
   <section class="section dark" id="faq">
     <div class="container faq-grid">
       <div>
-        <p class="section-label">08 — FAQ</p>
+        <p class="section-label">09 — FAQ</p>
         <h2>Pertanyaan sebelum memulai proyek?</h2>
       </div>
 
@@ -657,9 +805,58 @@
     </div>
   </section>
 
+  <section class="quote-section section" id="request">
+    <div class="container quote-grid">
+      <div class="quote-copy">
+        <p class="section-label">09 — PROJECT INQUIRY</p>
+        <h2>Berikan detail proyek. Kami mulai dari kebutuhan Anda.</h2>
+        <p>Form ini dapat menjadi titik awal untuk calon client. Data yang masuk membantu tim memahami kebutuhan sebelum komunikasi lanjutan.</p>
+        <div class="quote-checklist">
+          <div><span>✓</span> Jenis pekerjaan</div>
+          <div><span>✓</span> Ukuran atau estimasi area</div>
+          <div><span>✓</span> Lokasi proyek</div>
+          <div><span>✓</span> Referensi desain / foto</div>
+        </div>
+      </div>
+
+      <form class="quote-form" id="projectForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Nama</label>
+            <input id="name" name="name" placeholder="Nama Anda" required>
+          </div>
+          <div class="field">
+            <label for="company">Perusahaan / Usaha</label>
+            <input id="company" name="company" placeholder="Nama perusahaan">
+          </div>
+          <div class="field">
+            <label for="phone">WhatsApp</label>
+            <input id="phone" name="phone" placeholder="+62..." required>
+          </div>
+          <div class="field">
+            <label for="service">Kebutuhan</label>
+            <select id="service" name="service">
+              <option>Pagar & Gerbang</option>
+              <option>Kanopi</option>
+              <option>Railing & Tangga</option>
+              <option>Tralis & Pintu</option>
+              <option>Fabrikasi Besi</option>
+              <option>Custom Welding</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="message">Project Brief</label>
+            <textarea id="message" name="message" placeholder="Jelaskan ukuran, lokasi, desain, kebutuhan, atau hal penting lainnya..." required></textarea>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Kirim Detail via WhatsApp ↗</button>
+      </form>
+    </div>
+  </section>
+
   <section class="cta" id="contact">
     <div class="container cta-box">
-      <p class="section-label">09 — CONTACT</p>
+      <p class="section-label">10 — CONTACT</p>
       <h2>Punya proyek yang ingin <em>dibangun?</em></h2>
       <p>
         Ceritakan kebutuhan Anda kepada Kagawa. Sertakan ukuran, lokasi, desain,
@@ -735,6 +932,25 @@
   }, {rootMargin:'-35% 0px -55% 0px'});
 
   sections.forEach(section => observer.observe(section));
+
+  document.getElementById('projectForm')?.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(this);
+    const name = data.get('name') || '';
+    const company = data.get('company') || '-';
+    const phone = data.get('phone') || '';
+    const service = data.get('service') || '';
+    const message = data.get('message') || '';
+
+    const text =
+      `Halo Kagawa, saya ${name}.%0A%0A` +
+      `Perusahaan/Usaha: ${company}%0A` +
+      `WhatsApp: ${phone}%0A` +
+      `Kebutuhan: ${service}%0A%0A` +
+      `Project Brief:%0A${message}`;
+
+    window.open(`https://wa.me/6281363342574?text=${text}`, '_blank', 'noopener');
+  });
 </script>
 </body>
 </html>
