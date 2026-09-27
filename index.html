@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>KAGAWA | Welding, Fabrication & Custom Construction</title>
+  <meta name="description" content="Kagawa menyediakan pekerjaan welding, fabrikasi besi, dan custom construction untuk kebutuhan hunian, komersial, dan proyek.">
+  <meta name="theme-color" content="#0b0d0f">
+
+  <meta property="og:title" content="KAGAWA — Welding, Fabrication & Custom Construction">
+  <meta property="og:description" content="Solusi pekerjaan las, fabrikasi, dan konstruksi custom dengan pendekatan yang terukur dan berorientasi pada kebutuhan proyek.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0d0f;
+      --bg-2:#111417;
+      --surface:#171b1f;
+      --surface-2:#1d2227;
+      --line:rgba(255,255,255,.11);
+      --text:#f3f5f6;
+      --muted:#a5adb4;
+      --dark:#111315;
+      --paper:#f4f5f3;
+      --paper-2:#e9ebe8;
+      --ink:#141719;
+      --accent:#d9a441;
+      --accent-2:#f0c56b;
+      --max:1240px;
+      --radius:20px;
+      --shadow:0 24px 80px rgba(0,0,0,.28);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"DM Sans",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+    .container{width:min(calc(100% - 48px),var(--max));margin:auto}
+
+    /* NAV */
+    .site-header{
+      position:fixed;inset:0 0 auto;z-index:100;
+      background:rgba(11,13,15,.82);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .nav-wrap{height:82px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{
+      width:42px;height:42px;display:grid;place-items:center;
+      border:1px solid var(--accent);color:var(--accent);
+      font-family:"Manrope",sans-serif;font-weight:800;font-size:18px;
+      letter-spacing:.04em;
+    }
+    .brand strong,.brand small{display:block;line-height:1}
+    .brand strong{font-family:"Manrope",sans-serif;font-size:17px;letter-spacing:.14em}
+    .brand small{margin-top:6px;color:#8f979e;font-size:8px;letter-spacing:.24em}
+    .nav-menu{display:flex;align-items:center;gap:30px}
+    .nav-menu>a{font-size:13px;color:#b8bec3;transition:.25s}
+    .nav-menu>a:hover,.nav-menu>a.active{color:#fff}
+    .nav-menu .nav-cta{
+      padding:12px 18px;border:1px solid rgba(217,164,65,.65);
+      color:#fff;background:rgba(217,164,65,.08)
+    }
+    .menu-toggle{display:none;background:none;border:0;color:#fff;cursor:pointer}
+    .menu-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px}
+
+    /* HERO */
+    .hero{
+      min-height:860px;display:flex;align-items:center;position:relative;
+      background:
+        linear-gradient(90deg,rgba(7,9,10,.97) 0%,rgba(7,9,10,.82) 42%,rgba(7,9,10,.35) 100%),
+        radial-gradient(circle at 75% 40%,rgba(217,164,65,.15),transparent 34%),
+        linear-gradient(135deg,#1b2023,#080a0b 70%);
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;opacity:.16;
+      background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),
+                       linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+      background-size:70px 70px;
+      mask-image:linear-gradient(to right,black,transparent 80%);
+    }
+    .hero-content{position:relative;padding-top:80px}
+    .eyebrow,.section-label{
+      color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.2em;
+      text-transform:uppercase;
+    }
+    .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+    .eyebrow span{width:32px;height:1px;background:var(--accent)}
+    .hero h1{
+      max-width:780px;font-family:"Manrope",sans-serif;
+      font-size:clamp(50px,7vw,94px);line-height:.99;letter-spacing:-.055em;
+      font-weight:800;
+    }
+    em{font-style:normal;color:var(--accent)}
+    .hero-text{max-width:650px;margin:30px 0 34px;color:#b6bdc2;font-size:17px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      min-height:50px;padding:0 21px;display:inline-flex;align-items:center;justify-content:center;
+      gap:12px;border:1px solid transparent;font-size:13px;font-weight:700;transition:.25s;
+    }
+    .btn-primary{background:var(--accent);color:#111}
+    .btn-primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+    .btn-ghost{border-color:rgba(255,255,255,.2);color:#fff;background:rgba(255,255,255,.03)}
+    .btn-ghost:hover{background:#fff;color:#111}
+    .hero-meta{display:flex;gap:42px;margin-top:74px;padding-top:22px;border-top:1px solid var(--line)}
+    .hero-meta div{display:flex;gap:12px;align-items:flex-start}
+    .hero-meta strong{color:var(--accent);font-size:11px;letter-spacing:.1em}
+    .hero-meta span{font-size:11px;color:#969ea4;text-transform:uppercase;letter-spacing:.1em;line-height:1.4}
+    .hero-scroll{position:absolute;right:32px;bottom:30px;color:#747c82;font-size:9px;letter-spacing:.18em;writing-mode:vertical-rl}
+    .hero-scroll span{color:var(--accent);font-size:18px;margin-top:8px}
+
+    /* COMMON */
+    .section{padding:120px 0}
+    .section-head{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:55px}
+    .section-head>div{max-width:720px}
+    h2{
+      margin-top:12px;font-family:"Manrope",sans-serif;
+      font-size:clamp(34px,4.2vw,58px);line-height:1.05;letter-spacing:-.04em
+    }
+    .section-desc{max-width:430px;color:#8f989f;font-size:14px}
+    .dark{background:var(--bg-2)}
+    .light{background:var(--paper);color:var(--ink)}
+    .light .section-desc{color:#687077}
+
+    /* INTRO */
+    .intro{background:var(--paper);color:var(--ink)}
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+    .intro h2{max-width:650px}
+    .intro-copy{max-width:520px}
+    .intro-copy p{font-size:18px;color:#4e575d;margin-bottom:24px}
+    .text-link{font-size:13px;font-weight:700;border-bottom:1px solid #9ca2a5;padding-bottom:5px}
+    .text-link span{color:#a8751d;margin-left:6px}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:90px;align-items:center}
+    .about-image{
+      min-height:570px;position:relative;overflow:hidden;
+      background:
+        linear-gradient(135deg,rgba(217,164,65,.2),transparent 35%),
+        repeating-linear-gradient(125deg,#202529 0 18px,#171b1e 18px 36px);
+      border:1px solid var(--line);
+    }
+    .about-image:after{
+      content:"K";position:absolute;right:7%;bottom:-15%;
+      font:800 300px/1 "Manrope";color:rgba(255,255,255,.035)
+    }
+    .image-tag{
+      position:absolute;left:22px;bottom:22px;padding:10px 13px;
+      border:1px solid rgba(255,255,255,.13);background:rgba(0,0,0,.38);
+      color:#aab1b6;font-size:9px;letter-spacing:.16em
+    }
+    .about-content h2{max-width:600px}
+    .about-content>p:not(.section-label){max-width:620px;color:#9fa7ad;margin-top:25px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;padding-top:26px;border-top:1px solid var(--line)}
+    .stats strong{display:block;color:var(--accent);font-size:12px;margin-bottom:9px}
+    .stats span{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#c4c9cd}
+
+    /* CAPABILITY */
+    .capability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:35px}
+    .capability{background:var(--bg-2);padding:30px;min-height:220px}
+    .capability-number{color:var(--accent);font-size:11px;font-weight:700}
+    .capability h3{font-family:"Manrope";font-size:21px;margin:35px 0 12px}
+    .capability p{font-size:13px;color:#90999f}
+
+    /* SERVICES */
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service-card{
+      position:relative;min-height:300px;padding:28px;background:#fff;border:1px solid #dde0dd;
+      transition:.3s;overflow:hidden
+    }
+    .service-card:hover{transform:translateY(-5px);box-shadow:0 18px 50px rgba(0,0,0,.08)}
+    .service-card:after{
+      content:"";position:absolute;right:-40px;bottom:-55px;width:150px;height:150px;
+      border:1px solid #ddd;border-radius:50%
+    }
+    .service-number{font-size:10px;color:#a8751d;font-weight:700}
+    .service-icon{margin:35px 0 20px;font-size:24px;color:#252a2d}
+    .service-card h3{font-family:"Manrope";font-size:21px;letter-spacing:-.02em}
+    .service-card p{font-size:13px;color:#697177;margin:11px 0 22px;max-width:330px}
+    .service-card a{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+    .service-featured{background:#171b1f;color:#fff;border-color:#171b1f}
+    .service-featured p{color:#a1a9ae}.service-featured .service-icon{color:var(--accent)}
+    .service-featured a{color:var(--accent)}
+
+    /* WHY */
+    .why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:100px}
+    .why-list{border-top:1px solid var(--line)}
+    .why-item{display:grid;grid-template-columns:45px 1fr;gap:20px;padding:25px 0;border-bottom:1px solid var(--line)}
+    .why-item>span{color:var(--accent);font-size:11px;font-weight:700}
+    .why-item h3{font-family:"Manrope";font-size:19px}
+    .why-item p{color:#929ba1;font-size:13px;margin-top:7px}
+
+    /* PROJECTS */
+    .project-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:16px}
+    .project-visual{
+      min-height:390px;display:flex;align-items:flex-end;padding:18px;
+      background:
+        linear-gradient(180deg,transparent 40%,rgba(0,0,0,.82)),
+        linear-gradient(135deg,#3a4043,#16191b);
+      border:1px solid #dfe1df;
+    }
+    .project-large .project-visual{min-height:500px}
+    .project-two{background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.82)),linear-gradient(135deg,#4c4a45,#1a1b1b)}
+    .project-three{background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.82)),linear-gradient(135deg,#45484a,#181a1b)}
+    .project-visual span{color:#fff;font-size:9px;letter-spacing:.18em}
+    .project-info{display:flex;justify-content:space-between;gap:15px;padding:17px 2px}
+    .project-info h3{font-family:"Manrope";font-size:17px}
+    .project-info p{font-size:11px;color:#737c81;margin-top:3px}
+    .project-info>span{color:#a8751d}
+    .portfolio-note{
+      margin-top:22px;padding:18px 20px;border:1px dashed #cdd1cf;
+      display:flex;justify-content:space-between;gap:20px;color:#70787d
+    }
+    .portfolio-note span{font-size:9px;letter-spacing:.16em;color:#a8751d}
+    .portfolio-note p{font-size:12px}
+
+    /* PROCESS */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #cfd3d0;border-bottom:1px solid #cfd3d0}
+    .process-item{padding:32px 25px;border-right:1px solid #cfd3d0;min-height:240px}
+    .process-item:last-child{border-right:0}
+    .process-item>span{color:#a8751d;font-weight:700;font-size:11px}
+    .process-item h3{font-family:"Manrope";font-size:19px;margin:42px 0 10px}
+    .process-item p{font-size:12px;color:#667077}
+
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px}
+    .faq-list{border-top:1px solid var(--line)}
+    details{border-bottom:1px solid var(--line);padding:20px 0}
+    summary{cursor:pointer;list-style:none;font-family:"Manrope";font-size:16px;font-weight:700;display:flex;justify-content:space-between;gap:20px}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";color:var(--accent);font-size:22px;font-weight:400}
+    details[open] summary:after{content:"−"}
+    details p{color:#98a0a6;font-size:13px;max-width:700px;padding:13px 30px 0 0}
+
+    /* CTA */
+    .cta{padding:110px 0;background:
+      radial-gradient(circle at 80% 20%,rgba(217,164,65,.16),transparent 28%),
+      #121619;
+    }
+    .cta-box{border:1px solid var(--line);padding:70px;position:relative;overflow:hidden}
+    .cta-box:after{content:"KAGAWA";position:absolute;right:-20px;bottom:-55px;font:800 150px/1 "Manrope";color:rgba(255,255,255,.025)}
+    .cta-box h2{max-width:800px}
+    .cta-box>p:not(.section-label){max-width:610px;color:#9ca4aa;margin:25px 0 30px}
+    .contact-details{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:55px;padding-top:25px;border-top:1px solid var(--line)}
+    .contact-details small{display:block;color:#717a80;font-size:8px;letter-spacing:.16em;margin-bottom:7px}
+    .contact-details strong{font-size:12px;font-weight:600;color:#e2e5e7}
+
+    /* FOOTER */
+    .footer{background:#080a0b;border-top:1px solid var(--line)}
+    .footer-main{padding:48px 0;display:grid;grid-template-columns:1fr 1fr auto;gap:30px;align-items:center}
+    .footer-main>p{color:#737b81;font-size:12px}
+    .footer-links{display:flex;gap:22px;justify-content:flex-end}
+    .footer-links a{font-size:11px;color:#9ba2a7}
+    .footer-links a:hover{color:#fff}
+    .footer-bottom{padding:17px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#5f676c;font-size:9px;letter-spacing:.04em}
+
+    @media(max-width:900px){
+      .nav-menu{position:absolute;top:82px;left:0;right:0;padding:20px 24px;display:none;flex-direction:column;align-items:stretch;background:#0b0d0f;border-bottom:1px solid var(--line)}
+      .nav-menu.open{display:flex}
+      .nav-menu .nav-cta{text-align:center}
+      .menu-toggle{display:block}
+      .hero{min-height:760px}
+      .intro-grid,.about-grid,.why-grid,.faq-grid{grid-template-columns:1fr;gap:45px}
+      .capability-grid,.service-grid{grid-template-columns:1fr 1fr}
+      .project-grid{grid-template-columns:1fr 1fr}
+      .project-large{grid-column:1/-1}
+      .project-large .project-visual{min-height:430px}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .process-item:nth-child(2){border-right:0}
+      .process-item:nth-child(n+3){border-top:1px solid #cfd3d0}
+      .footer-main{grid-template-columns:1fr}
+      .footer-links{justify-content:flex-start}
+    }
+
+    @media(max-width:620px){
+      .container{width:min(calc(100% - 30px),var(--max))}
+      .section{padding:82px 0}
+      .hero{min-height:720px}
+      .hero h1{font-size:49px}
+      .hero-text{font-size:15px}
+      .hero-meta{gap:18px;flex-wrap:wrap;margin-top:55px}
+      .hero-scroll{display:none}
+      .section-head{display:block;margin-bottom:38px}
+      .section-desc{margin-top:18px}
+      .capability-grid,.service-grid,.project-grid,.process-grid{grid-template-columns:1fr}
+      .project-large{grid-column:auto}
+      .project-visual,.project-large .project-visual{min-height:330px}
+      .process-item{border-right:0!important;border-top:1px solid #cfd3d0!important}
+      .process-item:first-child{border-top:0!important}
+      .cta-box{padding:42px 25px}
+      .contact-details{grid-template-columns:1fr}
+      .portfolio-note{display:block}
+      .portfolio-note p{margin-top:8px}
+      .stats{gap:12px}
+      .stats span{font-size:9px}
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header" id="top">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top" aria-label="Kagawa">
+      <span class="brand-mark">K</span>
+      <span><strong>KAGAWA</strong><small>BENGKEL LAS</small></span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-menu">
+      <a href="#home" class="active">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="#capabilities">Kapabilitas</a>
+      <a href="#services">Layanan</a>
+      <a href="#projects">Portfolio</a>
+      <a href="#process">Proses</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Hubungi Kami</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="eyebrow"><span></span> WELDING · FABRICATION · CUSTOM CONSTRUCTION</div>
+      <h1>Built with <em>precision.</em><br>Designed to last.</h1>
+      <p class="hero-text">
+        Kagawa melayani pekerjaan welding, fabrikasi besi, dan konstruksi custom
+        untuk kebutuhan hunian, usaha, serta proyek — dengan perhatian pada
+        detail, fungsi, dan hasil akhir.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Konsultasi Proyek <span>↗</span></a>
+        <a href="#projects" class="btn btn-ghost">Lihat Portfolio</a>
+      </div>
+
+      <div class="hero-meta">
+        <div><strong>01</strong><span>Custom<br>Solution</span></div>
+        <div><strong>02</strong><span>Detail &<br>Precision</span></div>
+        <div><strong>03</strong><span>Clear<br>Communication</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
+  </section>
+
+  <section class="intro section">
+    <div class="container intro-grid">
+      <div>
+        <p class="section-label">01 — COMPANY PROFILE</p>
+        <h2>Solusi metalwork yang dimulai dari kebutuhan nyata.</h2>
+      </div>
+      <div class="intro-copy">
+        <p>
+          Setiap proyek memiliki ukuran, kondisi lapangan, fungsi, dan karakter
+          yang berbeda. Kagawa membantu menerjemahkan kebutuhan tersebut menjadi
+          pekerjaan yang terencana dan dapat dikerjakan secara custom.
+        </p>
+        <a href="#about" class="text-link">Kenal lebih dekat dengan Kagawa <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about section dark" id="about">
+    <div class="container about-grid">
+      <div class="about-image" role="img" aria-label="Visual workshop Kagawa">
+        <div class="image-tag">KAGAWA / WORKSHOP</div>
+      </div>
+
+      <div class="about-content">
+        <p class="section-label">02 — TENTANG KAMI</p>
+        <h2>Dibuat untuk bekerja. Dipikirkan untuk bertahan.</h2>
+        <p>
+          Kagawa berfokus pada pekerjaan besi dan konstruksi custom dengan
+          pendekatan yang mengutamakan komunikasi kebutuhan, ketepatan detail,
+          fungsi, serta tampilan akhir. Spesifikasi pekerjaan dibahas sejak awal
+          agar hasil dapat disesuaikan dengan kondisi proyek dan kebutuhan pelanggan.
+        </p>
+
+        <div class="stats">
+          <div><strong>01</strong><span>Custom<br>Solution</span></div>
+          <div><strong>02</strong><span>Quality<br>Focused</span></div>
+          <div><strong>03</strong><span>Customer<br>Oriented</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="capabilities">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">03 — CAPABILITIES</p>
+          <h2>Yang kami perhatikan di setiap pekerjaan.</h2>
+        </div>
+        <p class="section-desc">
+          Pendekatan kerja disesuaikan dengan jenis pekerjaan, kondisi lapangan,
+          desain, material, dan kebutuhan akhir proyek.
+        </p>
+      </div>
+
+      <div class="capability-grid">
+        <article class="capability">
+          <span class="capability-number">01</span>
+          <h3>Detail & Measurement</h3>
+          <p>Ukuran dan kebutuhan teknis dibahas agar pekerjaan memiliki acuan yang jelas sebelum pengerjaan.</p>
+        </article>
+        <article class="capability">
+          <span class="capability-number">02</span>
+          <h3>Fabrication</h3>
+          <p>Komponen dan konstruksi besi dapat dikerjakan sesuai desain serta kebutuhan penggunaan.</p>
+        </article>
+        <article class="capability">
+          <span class="capability-number">03</span>
+          <h3>Finishing</h3>
+          <p>Detail akhir menjadi bagian dari proses untuk menjaga tampilan dan kesesuaian dengan kebutuhan proyek.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="services section light" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">04 — SERVICES</p>
+          <h2>Layanan untuk kebutuhan residential, commercial, dan custom project.</h2>
+        </div>
+        <p class="section-desc">
+          Lingkup pekerjaan dapat disesuaikan berdasarkan desain, ukuran, material,
+          kondisi lokasi, serta kebutuhan proyek.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <span class="service-number">01</span>
+          <div class="service-icon">▦</div>
+          <h3>Pagar & Gerbang</h3>
+          <p>Pagar besi, gerbang, dan desain custom untuk kebutuhan hunian maupun usaha.</p>
+          <a href="#contact">Konsultasikan ↗</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">02</span>
+          <div class="service-icon">⌂</div>
+          <h3>Kanopi</h3>
+          <p>Pembuatan rangka dan kanopi dengan desain yang menyesuaikan bangunan dan kebutuhan area.</p>
+          <a href="#contact">Konsultasikan ↗</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">03</span>
+          <div class="service-icon">╋</div>
+          <h3>Railing & Tangga</h3>
+          <p>Railing tangga, balkon, dan kebutuhan pengaman dengan konstruksi yang disesuaikan.</p>
+          <a href="#contact">Konsultasikan ↗</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">04</span>
+          <div class="service-icon">□</div>
+          <h3>Tralis & Pintu</h3>
+          <p>Tralis, pintu besi, jendela, serta elemen pengaman dengan pilihan desain custom.</p>
+          <a href="#contact">Konsultasikan ↗</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">05</span>
+          <div class="service-icon">⌘</div>
+          <h3>Fabrikasi Besi</h3>
+          <p>Pengerjaan komponen dan konstruksi besi untuk kebutuhan proyek, usaha, maupun penggunaan khusus.</p>
+          <a href="#contact">Konsultasikan ↗</a>
+        </article>
+
+        <article class="service-card service-featured">
+          <span class="service-number">06</span>
+          <div class="service-icon">✦</div>
+          <h3>Custom Welding</h3>
+          <p>Memiliki desain atau kebutuhan khusus? Diskusikan spesifikasi pekerjaan bersama Kagawa.</p>
+          <a href="#contact">Mulai Konsultasi ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="why section dark">
+    <div class="container">
+      <div class="why-grid">
+        <div>
+          <p class="section-label">05 — WORKING PRINCIPLES</p>
+          <h2>Profesional bukan hanya soal hasil akhir.</h2>
+        </div>
+
+        <div class="why-list">
+          <div class="why-item">
+            <span>01</span>
+            <div>
+              <h3>Requirement First</h3>
+              <p>Kebutuhan, ukuran, desain, dan penggunaan dibahas sebelum pekerjaan berjalan.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span>02</span>
+            <div>
+              <h3>Detail Oriented</h3>
+              <p>Fungsi, proporsi, detail pengerjaan, dan tampilan akhir menjadi bagian dari perhatian pekerjaan.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span>03</span>
+            <div>
+              <h3>Clear Communication</h3>
+              <p>Spesifikasi dan estimasi dibicarakan agar ekspektasi pekerjaan lebih jelas sejak awal.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span>04</span>
+            <div>
+              <h3>Project Adaptation</h3>
+              <p>Pekerjaan dapat disesuaikan dengan kondisi lapangan dan kebutuhan proyek yang berbeda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects section light" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">06 — SELECTED WORKS</p>
+          <h2>Portfolio yang berbicara lewat hasil nyata.</h2>
+        </div>
+        <p class="section-desc">
+          Dokumentasi pekerjaan asli dapat ditambahkan untuk memperkuat company profile
+          dan menjadi referensi calon pelanggan.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project project-large">
+          <div class="project-visual project-one"><span>PROJECT 01 · CUSTOM WELDING</span></div>
+          <div class="project-info">
+            <div><h3>Pagar Custom</h3><p>Residential / Custom Welding</p></div>
+            <span>↗</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-visual project-two"><span>PROJECT 02 · FABRICATION</span></div>
+          <div class="project-info">
+            <div><h3>Kanopi</h3><p>Residential / Fabrication</p></div>
+            <span>↗</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-visual project-three"><span>PROJECT 03 · METALWORK</span></div>
+          <div class="project-info">
+            <div><h3>Railing</h3><p>Residential / Metalwork</p></div>
+            <span>↗</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="portfolio-note">
+        <span>CONTENT NOTE</span>
+        <p>Placeholder visual di atas sebaiknya diganti dengan foto project asli, detail pekerjaan, lokasi, dan spesifikasi yang memang tersedia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="process section light" id="process">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">07 — PROJECT FLOW</p>
+          <h2>Terstruktur dari konsultasi hingga pemasangan.</h2>
+        </div>
+        <p class="section-desc">Alur dibuat sederhana agar calon pelanggan memahami bagaimana pekerjaan diproses.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-item">
+          <span>01</span>
+          <h3>Konsultasi</h3>
+          <p>Sampaikan kebutuhan, ukuran, desain, referensi, dan target penggunaan.</p>
+        </div>
+        <div class="process-item">
+          <span>02</span>
+          <h3>Survey & Ukur</h3>
+          <p>Detail pekerjaan ditentukan berdasarkan kondisi dan kebutuhan di lapangan.</p>
+        </div>
+        <div class="process-item">
+          <span>03</span>
+          <h3>Penawaran</h3>
+          <p>Spesifikasi dan estimasi pekerjaan dibahas sebelum proses dimulai.</p>
+        </div>
+        <div class="process-item">
+          <span>04</span>
+          <h3>Produksi & Instalasi</h3>
+          <p>Pengerjaan, finishing, dan pemasangan dilakukan berdasarkan kesepakatan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="faq">
+    <div class="container faq-grid">
+      <div>
+        <p class="section-label">08 — FAQ</p>
+        <h2>Pertanyaan sebelum memulai proyek?</h2>
+      </div>
+
+      <div class="faq-list">
+        <details open>
+          <summary>Apakah Kagawa menerima desain custom?</summary>
+          <p>Ya. Kebutuhan ukuran, desain, referensi, dan detail pekerjaan dapat didiskusikan terlebih dahulu untuk menentukan ruang lingkup pekerjaan.</p>
+        </details>
+        <details>
+          <summary>Apakah bisa konsultasi sebelum menentukan pekerjaan?</summary>
+          <p>Bisa. Konsultasi awal digunakan untuk memahami kebutuhan, kondisi pekerjaan, dan spesifikasi yang diperlukan sebelum penawaran.</p>
+        </details>
+        <details>
+          <summary>Apakah tersedia survey dan pengukuran?</summary>
+          <p>Survey dan pengukuran dapat dilakukan sesuai kebutuhan pekerjaan dan kondisi proyek.</p>
+        </details>
+        <details>
+          <summary>Bagaimana cara mendapatkan estimasi harga?</summary>
+          <p>Kirimkan kebutuhan, ukuran, lokasi, serta referensi desain jika tersedia. Detail pekerjaan kemudian dapat dibahas untuk penyusunan estimasi.</p>
+        </details>
+        <details>
+          <summary>Apakah melayani proyek untuk usaha atau kebutuhan komersial?</summary>
+          <p>Kagawa melayani kebutuhan rumah, usaha, dan pekerjaan proyek. Lingkup pekerjaan dapat dibahas berdasarkan kebutuhan masing-masing proyek.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container cta-box">
+      <p class="section-label">09 — CONTACT</p>
+      <h2>Punya proyek yang ingin <em>dibangun?</em></h2>
+      <p>
+        Ceritakan kebutuhan Anda kepada Kagawa. Sertakan ukuran, lokasi, desain,
+        referensi, atau foto area bila tersedia agar konsultasi dapat dimulai dengan lebih jelas.
+      </p>
+
+      <a class="btn btn-primary"
+         href="https://wa.me/6281363342574?text=Halo%20Kagawa%2C%20saya%20ingin%20konsultasi%20mengenai%20pekerjaan%20las%20atau%20fabrikasi."
+         target="_blank" rel="noopener">
+        Chat via WhatsApp <span>↗</span>
+      </a>
+
+      <div class="contact-details">
+        <div><small>LOCATION</small><strong>Dharmasraya, Sumatera Barat</strong></div>
+        <div><small>WHATSAPP</small><strong>+62 813-6334-2574</strong></div>
+        <div><small>OPERATING DAYS</small><strong>Senin — Sabtu</strong></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-main">
+    <div class="brand footer-brand">
+      <span class="brand-mark">K</span>
+      <span><strong>KAGAWA</strong><small>BENGKEL LAS</small></span>
+    </div>
+    <p>Welding · Fabrication · Custom Construction</p>
+    <div class="footer-links">
+      <a href="#about">Tentang</a>
+      <a href="#services">Layanan</a>
+      <a href="#projects">Portfolio</a>
+      <a href="#contact">Kontak</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Kagawa. All rights reserved.</span>
+    <span>Website by Dinda</span>
+  </div>
+</footer>
+
+<a class="floating-wa" href="https://wa.me/6281363342574" target="_blank" rel="noopener" aria-label="WhatsApp"
+   style="position:fixed;right:20px;bottom:20px;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#25D366;color:#fff;font-weight:800;font-size:10px;z-index:90;box-shadow:0 12px 30px rgba(0,0,0,.25)">WA</a>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle?.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const sections = document.querySelectorAll('main section[id]');
+  const links = document.querySelectorAll('.nav-menu a[href^="#"]');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(link => link.classList.toggle(
+          'active',
+          link.getAttribute('href') === '#' + entry.target.id
+        ));
+      }
+    });
+  }, {rootMargin:'-35% 0px -55% 0px'});
+
+  sections.forEach(section => observer.observe(section));
+</script>
+</body>
+</html>
